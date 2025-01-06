@@ -1,0 +1,22 @@
+{
+    "name": "JP.Notek.AtomicSoup.Sample",
+    "rootNamespace": "",
+    "references": [
+        "UdonSharp.Runtime",
+        "JP.Notek.AtomicSoup",
+        "VRC.Udon.Serialization.OdinSerializer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "VRCSDKBase.dll",
+        "VRCSDK3.dll",
+        "VRC.Udon.Common.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

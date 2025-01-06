@@ -1,0 +1,1512 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093c24689b305fc41a99244bd6096916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sourceByFileNameKeys:
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/ByteAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableByteAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedByteAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/SbyteAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableSbyteAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedSbyteAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/DoubleAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableDoubleAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedDoubleAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/FloatAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableFloatAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedFloatAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/IntAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableIntAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedIntAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/UintAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableUintAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedUintAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/LongAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableLongAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedLongAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/UlongAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableUlongAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedUlongAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/ShortAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableShortAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedShortAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/UshortAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableUshortAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedUshortAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/ColorAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableColorAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedColorAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/Color32Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableColor32Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedColor32Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/QuaternionAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableQuaternionAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedQuaternionAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/Vector2Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableVector2Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedVector2Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/Vector3Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableVector3Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedVector3Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/Vector4Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableVector4Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedVector4Atom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/StringAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableStringAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedStringAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CharAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableCharAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedCharAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/VRCUrlAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableVRCUrlAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedVRCUrlAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/BoolAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableBoolAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedBoolAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/DataTokenAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableDataTokenAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedDataTokenAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/DataDictionaryAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableDataDictionaryAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedDataDictionaryAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/DataListAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/WritableDataListAtom.cs
+  - Packages/jp.notek.udux/UdonProgramSources/Atom/Typed/Generated/CalculatedDataListAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/ByteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableByteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedByteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SbyteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableSbyteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedSbyteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/DoubleAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableDoubleAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedDoubleAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/FloatAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableFloatAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedFloatAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/IntAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableIntAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedIntAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/UintAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableUintAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedUintAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/LongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableLongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedLongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/UlongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableUlongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedUlongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/ShortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableShortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedShortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/UshortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableUshortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedUshortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/ColorAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableColorAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedColorAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/Color32Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableColor32Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedColor32Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/QuaternionAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableQuaternionAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedQuaternionAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/Vector2Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableVector2Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedVector2Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/Vector3Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableVector3Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedVector3Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/Vector4Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableVector4Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedVector4Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/StringAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableStringAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedStringAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CharAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableCharAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedCharAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/VRCUrlAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableVRCUrlAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedVRCUrlAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/BoolAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableBoolAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedBoolAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/DataTokenAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableDataTokenAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedDataTokenAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/DataDictionaryAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableDataDictionaryAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedDataDictionaryAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/DataListAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableDataListAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedDataListAtom.cs
+  _sourceByFileNameValues:
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    ByteAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract byte
+    _Value { get; set; }\r\n        public byte Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected byte _PreviousValue;\r\n       
+    public byte PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected byte _NextValue;\r\n       
+    public byte NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(byte
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableByteAtom : ByteAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(byte value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedByteAtom : ByteAtom\r\n    {\r\n        public
+    abstract byte Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    SbyteAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract sbyte
+    _Value { get; set; }\r\n        public sbyte Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected sbyte _PreviousValue;\r\n       
+    public sbyte PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected sbyte
+    _NextValue;\r\n        public sbyte NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(sbyte
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableSbyteAtom : SbyteAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(sbyte value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedSbyteAtom : SbyteAtom\r\n    {\r\n        public
+    abstract sbyte Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DoubleAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract double
+    _Value { get; set; }\r\n        public double Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected double _PreviousValue;\r\n       
+    public double PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected double
+    _NextValue;\r\n        public double NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(double
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableDoubleAtom : DoubleAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(double value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedDoubleAtom : DoubleAtom\r\n    {\r\n        public
+    abstract double Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    FloatAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract float
+    _Value { get; set; }\r\n        public float Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected float _PreviousValue;\r\n       
+    public float PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected float
+    _NextValue;\r\n        public float NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(float
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableFloatAtom : FloatAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(float value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedFloatAtom : FloatAtom\r\n    {\r\n        public
+    abstract float Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    IntAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract int _Value
+    { get; set; }\r\n        public int Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected int _PreviousValue;\r\n       
+    public int PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected int _NextValue;\r\n       
+    public int NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(int
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableIntAtom : IntAtom\r\n    {\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(int value)\r\n        {\r\n           
+    SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedIntAtom : IntAtom\r\n    {\r\n        public
+    abstract int Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    UintAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract uint
+    _Value { get; set; }\r\n        public uint Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected uint _PreviousValue;\r\n       
+    public uint PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected uint _NextValue;\r\n       
+    public uint NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(uint
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableUintAtom : UintAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(uint value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedUintAtom : UintAtom\r\n    {\r\n        public
+    abstract uint Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    LongAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract long
+    _Value { get; set; }\r\n        public long Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected long _PreviousValue;\r\n       
+    public long PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected long _NextValue;\r\n       
+    public long NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(long
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableLongAtom : LongAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(long value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedLongAtom : LongAtom\r\n    {\r\n        public
+    abstract long Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    UlongAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract ulong
+    _Value { get; set; }\r\n        public ulong Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected ulong _PreviousValue;\r\n       
+    public ulong PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected ulong
+    _NextValue;\r\n        public ulong NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(ulong
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableUlongAtom : UlongAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(ulong value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedUlongAtom : UlongAtom\r\n    {\r\n        public
+    abstract ulong Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    ShortAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract short
+    _Value { get; set; }\r\n        public short Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected short _PreviousValue;\r\n       
+    public short PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected short
+    _NextValue;\r\n        public short NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(short
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableShortAtom : ShortAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(short value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedShortAtom : ShortAtom\r\n    {\r\n        public
+    abstract short Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    UshortAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract ushort
+    _Value { get; set; }\r\n        public ushort Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected ushort _PreviousValue;\r\n       
+    public ushort PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected ushort
+    _NextValue;\r\n        public ushort NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(ushort
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableUshortAtom : UshortAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(ushort value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedUshortAtom : UshortAtom\r\n    {\r\n        public
+    abstract ushort Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    ColorAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Color
+    _Value { get; set; }\r\n        public Color Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Color _PreviousValue;\r\n       
+    public Color PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Color
+    _NextValue;\r\n        public Color NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Color
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableColorAtom : ColorAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Color value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedColorAtom : ColorAtom\r\n    {\r\n        public
+    abstract Color Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Color32Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Color32
+    _Value { get; set; }\r\n        public Color32 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Color32 _PreviousValue;\r\n       
+    public Color32 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Color32
+    _NextValue;\r\n        public Color32 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Color32
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableColor32Atom : Color32Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Color32 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedColor32Atom : Color32Atom\r\n    {\r\n       
+    public abstract Color32 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    QuaternionAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract
+    Quaternion _Value { get; set; }\r\n        public Quaternion Value { get {\r\n           
+    PublishIfUnchanged();\r\n            return _Value;\r\n        } }\r\n       
+    protected Quaternion _PreviousValue;\r\n        public Quaternion PreviousValue
+    { get {\r\n            PublishIfUnchanged();\r\n            return _PreviousValue;\r\n       
+    } }\r\n        \r\n        protected Quaternion _NextValue;\r\n        public
+    Quaternion NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Quaternion
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableQuaternionAtom : QuaternionAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(Quaternion
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedQuaternionAtom : QuaternionAtom\r\n    {\r\n       
+    public abstract Quaternion Factory();\r\n        \r\n        public override
+    void OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Vector2Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Vector2
+    _Value { get; set; }\r\n        public Vector2 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Vector2 _PreviousValue;\r\n       
+    public Vector2 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector2
+    _NextValue;\r\n        public Vector2 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector2
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableVector2Atom : Vector2Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Vector2 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedVector2Atom : Vector2Atom\r\n    {\r\n       
+    public abstract Vector2 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Vector3Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Vector3
+    _Value { get; set; }\r\n        public Vector3 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Vector3 _PreviousValue;\r\n       
+    public Vector3 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector3
+    _NextValue;\r\n        public Vector3 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector3
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableVector3Atom : Vector3Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Vector3 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedVector3Atom : Vector3Atom\r\n    {\r\n       
+    public abstract Vector3 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Vector4Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Vector4
+    _Value { get; set; }\r\n        public Vector4 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Vector4 _PreviousValue;\r\n       
+    public Vector4 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector4
+    _NextValue;\r\n        public Vector4 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector4
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableVector4Atom : Vector4Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Vector4 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedVector4Atom : Vector4Atom\r\n    {\r\n       
+    public abstract Vector4 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    StringAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract string
+    _Value { get; set; }\r\n        public string Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected string _PreviousValue;\r\n       
+    public string PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected string
+    _NextValue;\r\n        public string NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(string
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableStringAtom : StringAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(string value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedStringAtom : StringAtom\r\n    {\r\n        public
+    abstract string Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    CharAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract char
+    _Value { get; set; }\r\n        public char Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected char _PreviousValue;\r\n       
+    public char PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected char _NextValue;\r\n       
+    public char NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(char
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableCharAtom : CharAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(char value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedCharAtom : CharAtom\r\n    {\r\n        public
+    abstract char Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    VRCUrlAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract VRCUrl
+    _Value { get; set; }\r\n        public VRCUrl Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected VRCUrl _PreviousValue;\r\n       
+    public VRCUrl PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected VRCUrl
+    _NextValue;\r\n        public VRCUrl NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(VRCUrl
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableVRCUrlAtom : VRCUrlAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(VRCUrl value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedVRCUrlAtom : VRCUrlAtom\r\n    {\r\n        public
+    abstract VRCUrl Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    BoolAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract bool
+    _Value { get; set; }\r\n        public bool Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected bool _PreviousValue;\r\n       
+    public bool PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected bool _NextValue;\r\n       
+    public bool NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(bool
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableBoolAtom : BoolAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(bool value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedBoolAtom : BoolAtom\r\n    {\r\n        public
+    abstract bool Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DataTokenAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract
+    DataToken _Value { get; set; }\r\n        public DataToken Value { get {\r\n           
+    PublishIfUnchanged();\r\n            return _Value;\r\n        } }\r\n       
+    protected DataToken _PreviousValue;\r\n        public DataToken PreviousValue
+    { get {\r\n            PublishIfUnchanged();\r\n            return _PreviousValue;\r\n       
+    } }\r\n        \r\n        protected DataToken _NextValue;\r\n        public
+    DataToken NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(DataToken
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableDataTokenAtom : DataTokenAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataToken
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedDataTokenAtom : DataTokenAtom\r\n    {\r\n       
+    public abstract DataToken Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DataDictionaryAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract
+    DataDictionary _Value { get; set; }\r\n        public DataDictionary Value {
+    get {\r\n            PublishIfUnchanged();\r\n            return _Value;\r\n       
+    } }\r\n        protected DataDictionary _PreviousValue;\r\n        public DataDictionary
+    PreviousValue { get {\r\n            PublishIfUnchanged();\r\n            return
+    _PreviousValue;\r\n        } }\r\n        \r\n        protected DataDictionary
+    _NextValue;\r\n        public DataDictionary NextValue { get {\r\n           
+    PublishIfUnchanged();\r\n            return _NextValue;\r\n        } }\r\n\r\n       
+    protected void SetNextValue(DataDictionary value)\r\n        {\r\n           
+    _NextValue = value;\r\n            IsDirty = true;\r\n            _Distributor.OnAtomChanged(this);\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.PublishAtomValuesToContext();\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableDataDictionaryAtom : DataDictionaryAtom\r\n   
+    {\r\n        public override void OnChange() { }\r\n\r\n        public void Set(DataDictionary
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedDataDictionaryAtom : DataDictionaryAtom\r\n   
+    {\r\n        public abstract DataDictionary Factory();\r\n        \r\n       
+    public override void OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DataListAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract DataList
+    _Value { get; set; }\r\n        public DataList Value { get {\r\n           
+    PublishIfUnchanged();\r\n            return _Value;\r\n        } }\r\n       
+    protected DataList _PreviousValue;\r\n        public DataList PreviousValue {
+    get {\r\n            PublishIfUnchanged();\r\n            return _PreviousValue;\r\n       
+    } }\r\n        \r\n        protected DataList _NextValue;\r\n        public DataList
+    NextValue { get {\r\n            PublishIfUnchanged();\r\n            return
+    _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(DataList
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class WritableDataListAtom : DataListAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataList value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.Udux\r\n{\r\n   
+    public abstract class CalculatedDataListAtom : DataListAtom\r\n    {\r\n       
+    public abstract DataList Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    ByteAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract byte
+    _Value { get; set; }\r\n        public byte Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected byte _PreviousValue;\r\n       
+    public byte PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected byte _NextValue;\r\n       
+    public byte NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(byte
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableByteAtom : ByteAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(byte value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedByteAtom : ByteAtom\r\n    {\r\n        public
+    abstract byte Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    SbyteAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract sbyte
+    _Value { get; set; }\r\n        public sbyte Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected sbyte _PreviousValue;\r\n       
+    public sbyte PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected sbyte
+    _NextValue;\r\n        public sbyte NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(sbyte
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableSbyteAtom : SbyteAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(sbyte value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedSbyteAtom : SbyteAtom\r\n    {\r\n        public
+    abstract sbyte Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DoubleAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract double
+    _Value { get; set; }\r\n        public double Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected double _PreviousValue;\r\n       
+    public double PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected double
+    _NextValue;\r\n        public double NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(double
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableDoubleAtom : DoubleAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(double value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedDoubleAtom : DoubleAtom\r\n    {\r\n        public
+    abstract double Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    FloatAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract float
+    _Value { get; set; }\r\n        public float Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected float _PreviousValue;\r\n       
+    public float PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected float
+    _NextValue;\r\n        public float NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(float
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableFloatAtom : FloatAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(float value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedFloatAtom : FloatAtom\r\n    {\r\n        public
+    abstract float Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    IntAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract int _Value
+    { get; set; }\r\n        public int Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected int _PreviousValue;\r\n       
+    public int PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected int _NextValue;\r\n       
+    public int NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(int
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableIntAtom : IntAtom\r\n    {\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(int value)\r\n        {\r\n           
+    SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedIntAtom : IntAtom\r\n    {\r\n        public
+    abstract int Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    UintAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract uint
+    _Value { get; set; }\r\n        public uint Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected uint _PreviousValue;\r\n       
+    public uint PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected uint _NextValue;\r\n       
+    public uint NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(uint
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableUintAtom : UintAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(uint value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedUintAtom : UintAtom\r\n    {\r\n        public
+    abstract uint Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    LongAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract long
+    _Value { get; set; }\r\n        public long Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected long _PreviousValue;\r\n       
+    public long PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected long _NextValue;\r\n       
+    public long NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(long
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableLongAtom : LongAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(long value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedLongAtom : LongAtom\r\n    {\r\n        public
+    abstract long Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    UlongAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract ulong
+    _Value { get; set; }\r\n        public ulong Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected ulong _PreviousValue;\r\n       
+    public ulong PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected ulong
+    _NextValue;\r\n        public ulong NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(ulong
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableUlongAtom : UlongAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(ulong value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedUlongAtom : UlongAtom\r\n    {\r\n        public
+    abstract ulong Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    ShortAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract short
+    _Value { get; set; }\r\n        public short Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected short _PreviousValue;\r\n       
+    public short PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected short
+    _NextValue;\r\n        public short NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(short
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableShortAtom : ShortAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(short value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedShortAtom : ShortAtom\r\n    {\r\n        public
+    abstract short Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    UshortAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract ushort
+    _Value { get; set; }\r\n        public ushort Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected ushort _PreviousValue;\r\n       
+    public ushort PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected ushort
+    _NextValue;\r\n        public ushort NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(ushort
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableUshortAtom : UshortAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(ushort value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedUshortAtom : UshortAtom\r\n    {\r\n        public
+    abstract ushort Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    ColorAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Color
+    _Value { get; set; }\r\n        public Color Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Color _PreviousValue;\r\n       
+    public Color PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Color
+    _NextValue;\r\n        public Color NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Color
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableColorAtom : ColorAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Color value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedColorAtom : ColorAtom\r\n    {\r\n        public
+    abstract Color Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Color32Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Color32
+    _Value { get; set; }\r\n        public Color32 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Color32 _PreviousValue;\r\n       
+    public Color32 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Color32
+    _NextValue;\r\n        public Color32 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Color32
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableColor32Atom : Color32Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Color32 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedColor32Atom : Color32Atom\r\n    {\r\n       
+    public abstract Color32 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    QuaternionAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract
+    Quaternion _Value { get; set; }\r\n        public Quaternion Value { get {\r\n           
+    PublishIfUnchanged();\r\n            return _Value;\r\n        } }\r\n       
+    protected Quaternion _PreviousValue;\r\n        public Quaternion PreviousValue
+    { get {\r\n            PublishIfUnchanged();\r\n            return _PreviousValue;\r\n       
+    } }\r\n        \r\n        protected Quaternion _NextValue;\r\n        public
+    Quaternion NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Quaternion
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableQuaternionAtom : QuaternionAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(Quaternion
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedQuaternionAtom : QuaternionAtom\r\n    {\r\n       
+    public abstract Quaternion Factory();\r\n        \r\n        public override
+    void OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Vector2Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Vector2
+    _Value { get; set; }\r\n        public Vector2 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Vector2 _PreviousValue;\r\n       
+    public Vector2 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector2
+    _NextValue;\r\n        public Vector2 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector2
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableVector2Atom : Vector2Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Vector2 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedVector2Atom : Vector2Atom\r\n    {\r\n       
+    public abstract Vector2 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Vector3Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Vector3
+    _Value { get; set; }\r\n        public Vector3 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Vector3 _PreviousValue;\r\n       
+    public Vector3 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector3
+    _NextValue;\r\n        public Vector3 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector3
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableVector3Atom : Vector3Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Vector3 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedVector3Atom : Vector3Atom\r\n    {\r\n       
+    public abstract Vector3 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    Vector4Atom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract Vector4
+    _Value { get; set; }\r\n        public Vector4 Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected Vector4 _PreviousValue;\r\n       
+    public Vector4 PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector4
+    _NextValue;\r\n        public Vector4 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector4
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableVector4Atom : Vector4Atom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(Vector4 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedVector4Atom : Vector4Atom\r\n    {\r\n       
+    public abstract Vector4 Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    StringAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract string
+    _Value { get; set; }\r\n        public string Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected string _PreviousValue;\r\n       
+    public string PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected string
+    _NextValue;\r\n        public string NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(string
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableStringAtom : StringAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(string value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedStringAtom : StringAtom\r\n    {\r\n        public
+    abstract string Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    CharAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract char
+    _Value { get; set; }\r\n        public char Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected char _PreviousValue;\r\n       
+    public char PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected char _NextValue;\r\n       
+    public char NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(char
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableCharAtom : CharAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(char value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedCharAtom : CharAtom\r\n    {\r\n        public
+    abstract char Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    VRCUrlAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract VRCUrl
+    _Value { get; set; }\r\n        public VRCUrl Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected VRCUrl _PreviousValue;\r\n       
+    public VRCUrl PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected VRCUrl
+    _NextValue;\r\n        public VRCUrl NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(VRCUrl
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableVRCUrlAtom : VRCUrlAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(VRCUrl value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedVRCUrlAtom : VRCUrlAtom\r\n    {\r\n        public
+    abstract VRCUrl Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    BoolAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract bool
+    _Value { get; set; }\r\n        public bool Value { get {\r\n            PublishIfUnchanged();\r\n           
+    return _Value;\r\n        } }\r\n        protected bool _PreviousValue;\r\n       
+    public bool PreviousValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _PreviousValue;\r\n        } }\r\n        \r\n        protected bool _NextValue;\r\n       
+    public bool NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(bool
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableBoolAtom : BoolAtom\r\n    {\r\n        public
+    override void OnChange() { }\r\n\r\n        public void Set(bool value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedBoolAtom : BoolAtom\r\n    {\r\n        public
+    abstract bool Factory();\r\n        \r\n        public override void OnChange()\r\n       
+    {\r\n            SetNextValue(Factory());\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DataTokenAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract
+    DataToken _Value { get; set; }\r\n        public DataToken Value { get {\r\n           
+    PublishIfUnchanged();\r\n            return _Value;\r\n        } }\r\n       
+    protected DataToken _PreviousValue;\r\n        public DataToken PreviousValue
+    { get {\r\n            PublishIfUnchanged();\r\n            return _PreviousValue;\r\n       
+    } }\r\n        \r\n        protected DataToken _NextValue;\r\n        public
+    DataToken NextValue { get {\r\n            PublishIfUnchanged();\r\n           
+    return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(DataToken
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableDataTokenAtom : DataTokenAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataToken
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedDataTokenAtom : DataTokenAtom\r\n    {\r\n       
+    public abstract DataToken Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DataDictionaryAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract
+    DataDictionary _Value { get; set; }\r\n        public DataDictionary Value {
+    get {\r\n            PublishIfUnchanged();\r\n            return _Value;\r\n       
+    } }\r\n        protected DataDictionary _PreviousValue;\r\n        public DataDictionary
+    PreviousValue { get {\r\n            PublishIfUnchanged();\r\n            return
+    _PreviousValue;\r\n        } }\r\n        \r\n        protected DataDictionary
+    _NextValue;\r\n        public DataDictionary NextValue { get {\r\n           
+    PublishIfUnchanged();\r\n            return _NextValue;\r\n        } }\r\n\r\n       
+    protected void SetNextValue(DataDictionary value)\r\n        {\r\n           
+    _NextValue = value;\r\n            IsDirty = true;\r\n            _Distributor.OnAtomChanged(this);\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.PublishAtomValuesToContext();\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableDataDictionaryAtom : DataDictionaryAtom\r\n   
+    {\r\n        public override void OnChange() { }\r\n\r\n        public void Set(DataDictionary
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedDataDictionaryAtom : DataDictionaryAtom\r\n   
+    {\r\n        public abstract DataDictionary Factory();\r\n        \r\n       
+    public override void OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
+    UnityEngine;\r\nusing VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None)]\r\n    public abstract class
+    DataListAtom : AtomSubscriberForAtom\r\n    {\r\n        protected abstract DataList
+    _Value { get; set; }\r\n        public DataList Value { get {\r\n           
+    PublishIfUnchanged();\r\n            return _Value;\r\n        } }\r\n       
+    protected DataList _PreviousValue;\r\n        public DataList PreviousValue {
+    get {\r\n            PublishIfUnchanged();\r\n            return _PreviousValue;\r\n       
+    } }\r\n        \r\n        protected DataList _NextValue;\r\n        public DataList
+    NextValue { get {\r\n            PublishIfUnchanged();\r\n            return
+    _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(DataList
+    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
+    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
+    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
+    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
+    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class WritableDataListAtom : DataListAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataList value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class CalculatedDataListAtom : DataListAtom\r\n    {\r\n       
+    public abstract DataList Factory();\r\n        \r\n        public override void
+    OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
+    }\r\n}\r\n"

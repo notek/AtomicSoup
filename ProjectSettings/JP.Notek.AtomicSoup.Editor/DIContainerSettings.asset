@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 53
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4996acf8301154190929b5babd28ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _managedComponentInstanceIdsKeys:
+  - 25858+Dispatcher
+  - Dispatcher
+  - Distributor
+  - Value1Atom
+  - Value2Atom
+  - Value3Atom
+  - AtomHashSet+AtomsChanged
+  - AtomHashSet+AtomsChangePublished
+  - SubscribersByAtomsDictionary+ViewSubscribers
+  - SubscribersByAtomsDictionary+ContextSubscribers
+  - SubscriberHashSet+PublishingSubscribers
+  - SyncValue1Atom
+  - SyncValue2Atom
+  - OwnerTimeDifferenceAtom
+  - SyncRequestIdAtom
+  _managedComponentInstanceIdsValues: b062ffffa6f0feff0af8ffff08f8ffff06f8ffff04f8fffffcf7fffffaf7fffff8f7fffff6f7fffff4f7ffff02f8ffff00f8fffffef7ffff243cf7ff
+  _managedComponentInstanceIdsKeysByProviderComponentInstanceIdKeys: 
+  _managedComponentInstanceIdsKeysByProviderComponentInstanceIdValues: []

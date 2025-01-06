@@ -1,0 +1,22 @@
+{
+    "name": "JP.Notek.AtomicSoup",
+    "rootNamespace": "",
+    "references": [
+        "UdonSharp.Runtime",
+        "ErrorProne.NET.CoreAnalyzers_Unity"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "VRCSDKBase.dll",
+        "VRCSDK3.dll",
+        "VRC.Udon.Common.dll",
+        "Microsoft.CodeAnalysis.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
