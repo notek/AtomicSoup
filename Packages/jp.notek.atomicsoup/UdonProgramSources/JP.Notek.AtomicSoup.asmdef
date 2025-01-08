@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "UdonSharp.Runtime",
-        "ErrorProne.NET.CoreAnalyzers_Unity"
+        "ErrorProne.NET.CoreAnalyzers_Unity",
+        "VRC.Udon.Serialization.OdinSerializer"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

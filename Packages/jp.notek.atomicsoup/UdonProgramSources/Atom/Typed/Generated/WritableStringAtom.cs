@@ -13,11 +13,13 @@ namespace JP.Notek.AtomicSoup
 {
     public abstract class WritableStringAtom : StringAtom
     {
+        public override bool IsInputNode { get { return true; } }
         public override void OnChange() { }
 
         public void Set(string value)
         {
             SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }
     }
 }

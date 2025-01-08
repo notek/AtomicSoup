@@ -13,11 +13,13 @@ namespace JP.Notek.AtomicSoup
 {
     public abstract class WritableFloatAtom : FloatAtom
     {
+        public override bool IsInputNode { get { return true; } }
         public override void OnChange() { }
 
         public void Set(float value)
         {
             SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }
     }
 }

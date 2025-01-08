@@ -13,11 +13,13 @@ namespace JP.Notek.AtomicSoup
 {
     public abstract class WritableDataListAtom : DataListAtom
     {
+        public override bool IsInputNode { get { return true; } }
         public override void OnChange() { }
 
         public void Set(DataList value)
         {
             SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }
     }
 }

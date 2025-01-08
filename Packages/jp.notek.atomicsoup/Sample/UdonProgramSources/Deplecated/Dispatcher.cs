@@ -101,7 +101,7 @@ namespace JP.Notek.AtomicSoup
         }
         public void RegisterStore(IReduceStore store)
         {
-            _Stores = _Stores.Add(store);
+            _Stores = _Stores.Concat(store);
         }
 
         public void Dispatch(string action, DataToken value = new DataToken())

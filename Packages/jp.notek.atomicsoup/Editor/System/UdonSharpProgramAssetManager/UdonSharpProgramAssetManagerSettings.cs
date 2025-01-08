@@ -10,29 +10,29 @@ namespace JP.Notek.AtomicSoup.Editor
     public class UdonSharpProgramAssetManagerSettings : ScriptableSingleton<UdonSharpProgramAssetManagerSettings>
     {
         [SerializeField]
-        private List<MonoScript> _managedScriptsList = new List<MonoScript>();
+        private List<string> _managedScriptsList = new List<string>();
 
         [SerializeField]
         private List<string> _managedAssetsKeys = new List<string>();
 
         [SerializeField]
-        private List<MonoScript> _managedAssetsValues = new List<MonoScript>();
+        private List<string> _managedAssetsValues = new List<string>();
 
-        public HashSet<MonoScript> managedScripts
+        public HashSet<string> managedScriptPaths
         {
-            get => new HashSet<MonoScript>(_managedScriptsList);
+            get => new HashSet<string>(_managedScriptsList);
             set
             {
-                _managedScriptsList = new List<MonoScript>(value);
+                _managedScriptsList = new List<string>(value);
                 Save();
             }
         }
 
-        public Dictionary<string, MonoScript> managedAssets
+        public Dictionary<string, string> managedAssetPathByScriptPath
         {
             get
             {
-                var dict = new Dictionary<string, MonoScript>();
+                var dict = new Dictionary<string, string>();
                 for (int i = 0; i < _managedAssetsKeys.Count; i++)
                 {
                     dict[_managedAssetsKeys[i]] = _managedAssetsValues[i];
@@ -42,7 +42,7 @@ namespace JP.Notek.AtomicSoup.Editor
             set
             {
                 _managedAssetsKeys = new List<string>(value.Keys);
-                _managedAssetsValues = new List<MonoScript>(value.Values);
+                _managedAssetsValues = new List<string>(value.Values);
                 Save();
             }
         }

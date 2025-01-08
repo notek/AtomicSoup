@@ -10,16 +10,6 @@ namespace JP.Notek.AtomicSoup.Editor
     [InitializeOnLoad]
     public class AtomSourceGenerator
     {
-        private static readonly string[] Types = new[]
-        {
-            "byte", "sbyte", "double", "float", "int", "uint", "long", "ulong",
-            "short", "ushort", "Color", "Color32", "Quaternion", "Vector2",
-            "Vector3", "Vector4", "string", "char", "VRCUrl", "bool"
-        };
-        private static readonly string[] UdonDataContainerTypes = new[]
-        {
-            "DataToken", "DataDictionary", "DataList"
-        };
         static AtomSourceGenerator()
         {
             EditorApplication.delayCall += GenerateAtomFiles;
@@ -30,7 +20,14 @@ namespace JP.Notek.AtomicSoup.Editor
             var outputPath = "Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/";
             Directory.CreateDirectory(outputPath);
 
-            foreach (var type in Types.Concat(UdonDataContainerTypes))
+            foreach (var type in AtomTypes.Syncable)
+            {
+                SaveGeneratedFile(outputPath, GenerateAtomClass(type));
+                SaveGeneratedFile(outputPath, GenerateWritableAtom(type));
+                SaveGeneratedFile(outputPath, GenerateCalculatedAtom(type));
+                SaveGeneratedFile(outputPath, GenerateSyncableAtom(type));
+            }
+            foreach (var type in AtomTypes.UdonDataContainer)
             {
                 SaveGeneratedFile(outputPath, GenerateAtomClass(type));
                 SaveGeneratedFile(outputPath, GenerateWritableAtom(type));
@@ -91,7 +88,6 @@ namespace JP.Notek.AtomicSoup.Editor
         {
             var className = $"{char.ToUpper(type[0])}{type.Substring(1)}Atom";
             var sourceBuilder = new StringBuilder();
-            //TODO: Value取得時に変更があれば反映させる
             sourceBuilder.AppendLine($@"
 {GeneratedCodeAnnotationPrefix}
 using UdonSharp;
@@ -123,9 +119,10 @@ namespace JP.Notek.AtomicSoup
 
         protected void SetNextValue({type} value)
         {{
+            if ({(type == "Color32" ? "_NextValue.Equals(value)" : "_NextValue == value")})
+                return;
             _NextValue = value;
             IsDirty = true;
-            _Distributor.OnAtomChanged(this);
         }}
 
         public override void ReflectNextValue()
@@ -137,7 +134,7 @@ namespace JP.Notek.AtomicSoup
 
         void PublishIfUnchanged()
         {{
-            _Distributor.PublishAtomValuesToContext();
+            _Distributor.PublishPrimary();
         }}
     }}
 }}");
@@ -146,8 +143,8 @@ namespace JP.Notek.AtomicSoup
 
         private static (string className, string source) GenerateWritableAtom(string type)
         {
-            var className = $"Writable{char.ToUpper(type[0])}{type.Substring(1)}Atom";
-            var baseClassName = $"{char.ToUpper(type[0])}{type.Substring(1)}Atom";
+            var baseClassName = AtomTypes.ToAtomType(type);
+            var className = $"Writable{baseClassName}";
 
             var sourceBuilder = new StringBuilder();
             sourceBuilder.AppendLine($@"
@@ -160,11 +157,13 @@ namespace JP.Notek.AtomicSoup
 {{
     public abstract class {className} : {baseClassName}
     {{
+        public override bool IsInputNode {{ get {{ return true; }} }}
         public override void OnChange() {{ }}
 
         public void Set({type} value)
         {{
             SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }}
     }}
 }}");
@@ -174,8 +173,8 @@ namespace JP.Notek.AtomicSoup
 
         private static (string className, string source) GenerateCalculatedAtom(string type)
         {
-            var className = $"Calculated{char.ToUpper(type[0])}{type.Substring(1)}Atom";
-            var baseClassName = $"{char.ToUpper(type[0])}{type.Substring(1)}Atom";
+            var baseClassName = AtomTypes.ToAtomType(type);
+            var className = $"Calculated{baseClassName}";
 
 
             var sourceBuilder = new StringBuilder();
@@ -194,6 +193,37 @@ namespace JP.Notek.AtomicSoup
         public override void OnChange()
         {{
             SetNextValue(Factory());
+        }}
+    }}
+}}");
+
+            return (className, sourceBuilder.ToString());
+        }
+
+        private static (string className, string source) GenerateSyncableAtom(string type)
+        {
+            var baseClassName = AtomTypes.ToAtomType(type);
+            var className = $"Syncable{baseClassName}";
+
+
+            var sourceBuilder = new StringBuilder();
+            sourceBuilder.AppendLine($@"
+{GeneratedCodeAnnotationPrefix}
+using UnityEngine;
+using VRC.SDKBase;
+using VRC.SDK3.Data;
+
+namespace JP.Notek.AtomicSoup
+{{
+    public abstract class {className} : {baseClassName}
+    {{
+        public override bool IsInputNode {{ get {{ return true; }} }}
+        public override void OnChange() {{ }}
+
+        public void Set({type} value)
+        {{
+            SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }}
     }}
 }}");

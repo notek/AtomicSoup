@@ -1,6 +1,7 @@
 ﻿
 using System;
 using JP.Notek.AtomicSoup;
+using TMPro;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -12,19 +13,21 @@ namespace AtomicSoupSample
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class ExampleObjectAdapter : AtomSubscriberForView
     {
-        [SerializeField, DIInject] public ExampleModel.Value1Atom _Value1;
-        [SerializeField, DIInject] public ExampleModel.Value2Atom _Value2;
+        [SerializeField, DIInject, SubscribeAtom] public ExampleModel.Value1Atom _Value1;
+        [SerializeField, DIInject, SubscribeAtom] public ExampleModel.Value2Atom _Value2;
         [SerializeField, DIInject, SubscribeAtom] public ExampleModel.Value3Atom _Value3;
+        [SerializeField, DIInject, SubscribeAtom] public ExampleModel.SyncValue1Atom _SyncValue1;
+        [SerializeField] TextMeshProUGUI _LogText;
 
         public override void OnChange()
         {
-            Debug.Log($"value1={_Value1.Value} value2={_Value2.Value} value3={_Value3.Value}");
+            _LogText.text = $"value1={_Value1.Value} value2={_Value2.Value} value3={_Value3.Value}\n{_LogText.text}";
 
             //更新が終わるまで参照をロックしたい場合
-            // if (SyncRequestId == -1)
-            //     Debug.Log($"value1={_Value1.Value} value2={_Value2.Value} value3={_Value3.Value}");
-            // else
-            //     Debug.Log("Locked");
+            if (!_SyncValue1.IsDirty)
+                _LogText.text = $"SyncValue1={_SyncValue1.Value}\n{_LogText.text}";
+            else
+                _LogText.text = $"SyncValue1 is updating\n{_LogText.text}";
         }
     }
 }

@@ -13,11 +13,13 @@ namespace JP.Notek.AtomicSoup
 {
     public abstract class WritableVector2Atom : Vector2Atom
     {
+        public override bool IsInputNode { get { return true; } }
         public override void OnChange() { }
 
         public void Set(Vector2 value)
         {
             SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }
     }
 }

@@ -13,11 +13,13 @@ namespace JP.Notek.AtomicSoup
 {
     public abstract class WritableColor32Atom : Color32Atom
     {
+        public override bool IsInputNode { get { return true; } }
         public override void OnChange() { }
 
         public void Set(Color32 value)
         {
             SetNextValue(value);
+            _Distributor.OnInputNodeChanged(this);
         }
     }
 }

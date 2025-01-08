@@ -1,10 +1,12 @@
-
 using System;
 
 namespace JP.Notek.AtomicSoup.VRCCollection
 {
     public static class ListExtensions {
-        public static T[] Add<T>(this T[] target, T source) {
+        public static T[] Concat<T>(this T[] target, T source) {
+            if (target == null) {
+                return new T[] { source };
+            }
             var ret = new T[target.Length + 1];
             Array.Copy(target, ret, target.Length);
             ret[ret.Length - 1] = source;

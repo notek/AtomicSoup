@@ -8,7 +8,5 @@ namespace JP.Notek.AtomicSoup
     public abstract class AtomSubscriber : Atom
     {
         public abstract void OnChange();
-        public override void ReflectNextValue()
-        { }
     }
 }

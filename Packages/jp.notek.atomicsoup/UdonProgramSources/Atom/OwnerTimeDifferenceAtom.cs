@@ -1,7 +1,7 @@
 using JP.Notek.AtomicSoup;
 using UnityEngine;
 
-namespace AtomicSoupSample.ExampleModel
+namespace JP.Notek.AtomicSoup
 {
     [UdonSharpProgramAsset]
     public class OwnerTimeDifferenceAtom : WritableFloatAtom

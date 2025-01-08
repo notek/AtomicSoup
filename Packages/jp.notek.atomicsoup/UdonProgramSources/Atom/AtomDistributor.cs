@@ -13,50 +13,57 @@ namespace JP.Notek.AtomicSoup
     }
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     [DIProvide(typeof(AtomHashSet), "AtomsChanged")]
-    [DIProvide(typeof(AtomHashSet), "AtomsChangePublished")]
-    [DIProvide(typeof(SubscribersByAtomsDictionary), "ViewSubscribers")]
-    [DIProvide(typeof(SubscribersByAtomsDictionary), "ContextSubscribers")]
-    [DIProvide(typeof(SubscriberHashSet), "PublishingSubscribers")]
+    [DIProvide(typeof(AtomGraphManager))]
+    [DIProvide(typeof(OwnerTimeDifferenceAtom))]
     public abstract class AtomDistributor : UdonSharpBehaviour
     {
-        [SerializeField, DIInject("ViewSubscribers")] protected SubscribersByAtomsDictionary _ViewSubscribers;
-        [SerializeField, DIInject("ContextSubscribers")] protected SubscribersByAtomsDictionary _ContextSubscribers;
+        [SerializeField, DIInject] protected AtomGraphManager _GraphManager;
         [SerializeField, DIInject("AtomsChanged")] protected AtomHashSet _AtomsChanged;
-        [SerializeField, DIInject("AtomsChangePublished")] protected AtomHashSet _AtomsChangePublished;
-        [SerializeField, DIInject("PublishingSubscribers")] protected SubscriberHashSet _PublishingSubscribers;
+        [DIInject] public OwnerTimeDifferenceAtom OwnerTimeDifference;
+
+        AtomSubscriber[] _SecondaryQueue = new AtomSubscriber[0];
+
         protected abstract DistributorConsistency Consistency { get; }
+        bool _Lock = false;
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void ClearSubscribers()
         {
-            _ViewSubscribers?.Clear();
-            _ContextSubscribers?.Clear();
+            _GraphManager?.Clear();
         }
 
-        public void SubscribeOnChangeForView(AtomSubscriber subscriber, params Atom[] atoms)
+        public void SubscribeOnChangeForView(AtomSubscriber subscriber, AtomSubscriber[] atoms)
         {
-            if (_ViewSubscribers == null)
-                return;
-            _ViewSubscribers.Register(subscriber, atoms);
+            _GraphManager?.RegisterViewOutputEdge(subscriber, atoms);
         }
 
-        public void SubscribeOnChangeForContext(AtomSubscriber subscriber, params Atom[] atoms)
+        public void SubscribeOnChangeForContext(AtomSubscriber subscriber, AtomSubscriber[] atoms)
         {
-            if (_ContextSubscribers == null)
-                return;
-            _ContextSubscribers.Register(subscriber, atoms);
+            _GraphManager?.RegisterIntermidiateEdge(subscriber, atoms);
+        }
+
+        public void SubscribeOnChangeForSync(AtomSubscriber subscriber, AtomSubscriber[] atoms)
+        {
+            _GraphManager?.RegisterSyncOutputEdge(subscriber, atoms);
+        }
+        public void FinalizePreprocess()
+        {
+            _GraphManager?.RemoveDuplicateInputNodes();
         }
 #endif
 
-        void Update()
+        void Start()
         {
-            //TODO: 不要なイベントが飛ぶ
-            PublishAtomValuesToContext();
-            //TODO: 非同期AtomはDirtyをチェックして待機する
-            PublishAtomValuesToView();
+            _GraphManager.Apply(Consistency);
         }
 
-        public void OnAtomChanged(Atom atom)
+        void Update()
+        {
+            PublishPrimary();
+            PublishSecondary();
+        }
+
+        public void OnInputNodeChanged(AtomSubscriber atom)
         {
             if (Consistency == DistributorConsistency.Eventual)
             {
@@ -65,49 +72,49 @@ namespace JP.Notek.AtomicSoup
             _AtomsChanged.Add(atom);
         }
 
-        public void PublishAtomValuesToContext()
+        public void PublishPrimary()
         {
-            while (_AtomsChanged.Count() > 0)
+            if(_AtomsChanged.Count() == 0)
+                return;
+            if(_SecondaryQueue.Length > 0)
             {
-                var atomsPublishing = _AtomsChanged.ToArray();
-                _AtomsChanged.Clear();
-                foreach (var atomPublishing in atomsPublishing)
-                {
-                    var published = _AtomsChangePublished.Contains(atomPublishing);
-                    if (!published)
-                    {
-                        atomPublishing.ReflectNextValue();
-                        foreach (var subscriber in _ContextSubscribers.Get(atomPublishing))
-                        {
-                            _PublishingSubscribers.Add(subscriber);
-                        }
-                        _AtomsChangePublished.Add(atomPublishing);
-                    }
-                }
+                return;
+            }
+            if (_Lock)
+                return;
+            _Lock = true;
+            var primaryQueue = _GraphManager.GetPrimaryQueue(_AtomsChanged);
+            var secondaryQueue = _GraphManager.GetSecondaryQueue(_AtomsChanged);
+            var atomsChanged =_AtomsChanged.ToArray();
+            foreach (var atom in atomsChanged)
+            {
+                atom.ReflectNextValue();
+            }
+            _AtomsChanged.Clear();
+            foreach (var atom in primaryQueue)
+            {
+                atom.OnChange();
+                atom.ReflectNextValue();
+            }
 
-                foreach (var subscriber in _PublishingSubscribers.ToArray())
-                {
-                    subscriber.OnChange();
-                }
-                _PublishingSubscribers.Clear();
-            }
+            _SecondaryQueue = secondaryQueue;
+            _Lock = false;
         }
-        void PublishAtomValuesToView()
+        void PublishSecondary()
         {
-            var viewsPublishing = _AtomsChangePublished.ToArray();
-            _AtomsChangePublished.Clear();
-            foreach (var view in viewsPublishing)
+            if (_SecondaryQueue.Length == 0)
+                return;
+            if (_Lock)
+                return;
+            _Lock = true;
+            //TODO: 非同期Atomは更新完了後にDirtyフラグを戻す
+
+            foreach (var atom in _SecondaryQueue)
             {
-                foreach (var subscriber in _ViewSubscribers.Get(view))
-                {
-                    _PublishingSubscribers.Add(subscriber);
-                }
+                atom.OnChange();
             }
-            foreach (var subscriber in _PublishingSubscribers.ToArray())
-            {
-                subscriber.OnChange();
-            }
-            _PublishingSubscribers.Clear();
+            _SecondaryQueue = new AtomSubscriber[0];
+            _Lock = false;
         }
     }
 }

@@ -9,8 +9,8 @@ namespace JP.Notek.AtomicSoup.VRCCollection
     {
         protected DataDictionary _SetDictionary = new DataDictionary();
 
-        Atom[] _Values = new Atom[0];
-        public void Add(Atom key)
+        AtomSubscriber[] _Values = new AtomSubscriber[0];
+        public void Add(AtomSubscriber key)
         {
             if (_SetDictionary.ContainsKey(key))
             {
@@ -19,10 +19,10 @@ namespace JP.Notek.AtomicSoup.VRCCollection
             else
             {
                 _SetDictionary.Add(key, _Values.Length);
-                _Values = _Values.Add(key);
+                _Values = _Values.Concat(key);
             }
         }
-        public void Remove(Atom key)
+        public void Remove(DataToken key)
         {
             var index = (int)_SetDictionary[key];
             _Values.RemoveAt(index);
@@ -37,12 +37,12 @@ namespace JP.Notek.AtomicSoup.VRCCollection
             }
         }
 
-        public Atom[] ToArray()
+        public AtomSubscriber[] ToArray()
         {
             return _Values;
         }
 
-        public bool Contains(Atom key)
+        public bool Contains(DataToken key)
         {
             return _SetDictionary.ContainsKey(key);
         }
@@ -50,7 +50,7 @@ namespace JP.Notek.AtomicSoup.VRCCollection
         public void Clear()
         {
             _SetDictionary.Clear();
-            _Values = new Atom[0];
+            _Values = new AtomSubscriber[0];
         }
 
         public int Count()

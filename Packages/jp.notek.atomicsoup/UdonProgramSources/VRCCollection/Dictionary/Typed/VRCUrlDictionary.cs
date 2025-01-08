@@ -19,7 +19,7 @@ namespace JP.Notek.AtomicSoup.VRCCollection
             else
             {
                 _Dictionary.Add(key, _Values.Length);
-                _Values = _Values.Add(value);
+                _Values = _Values.Concat(value);
             }
         }
         public void Remove(DataToken key)
