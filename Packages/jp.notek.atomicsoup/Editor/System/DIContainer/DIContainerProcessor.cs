@@ -6,7 +6,6 @@ using UdonSharp;
 using System.Collections.Generic;
 using VRC.Core.Source.Config.Interfaces;
 using UdonSharpEditor;
-using UnityEditor.Compilation;
 namespace JP.Notek.AtomicSoup.Editor
 {
     [InitializeOnLoad]
@@ -15,7 +14,7 @@ namespace JP.Notek.AtomicSoup.Editor
         static DIContainerProcessor()
         {
             EditorApplication.hierarchyChanged += Process;
-            CompilationPipeline.compilationFinished += (object sender) => Process();
+            Process();
         }
 
         private static void Process()

@@ -8,6 +8,7 @@ using VRC.Udon;
 using System.Collections.Generic;
 using UnityEditor.TerrainTools;
 using UnityEditor.Compilation;
+using System.IO;
 
 namespace JP.Notek.AtomicSoup.Editor
 {
@@ -16,56 +17,67 @@ namespace JP.Notek.AtomicSoup.Editor
     {
         static UdonSharpProgramAssetManager()
         {
-            EditorApplication.hierarchyChanged += ConsistantUdonSharpProgramAssets;
-            CompilationPipeline.compilationFinished += (object sender) => ConsistantUdonSharpProgramAssets();
+            ConsistantUdonSharpProgramAssets();
         }
 
         public static void ConsistantUdonSharpProgramAssets()
         {
             if (EditorApplication.isPlaying)
                 return;
-            var managedScripts = UdonSharpProgramAssetManagerSettings.instance.managedScripts;
-            var managedAssets = UdonSharpProgramAssetManagerSettings.instance.managedAssets;
+            var managedScriptPaths = UdonSharpProgramAssetManagerSettings.instance.managedScriptPaths;
+            var managedAssetPathByScriptPath = UdonSharpProgramAssetManagerSettings.instance.managedAssetPathByScriptPath;
 
             var currentScripts = new HashSet<MonoScript>(
-                Object.FindObjectsOfType<UdonSharpBehaviour>()
-                .Select(script => (MonoScript.FromMonoBehaviour(script), script.GetType()))
-                .Where(result => result.Item2.GetCustomAttributes(typeof(UdonSharpProgramAssetAttribute), true).Length > 0)
-                .Select(result => result.Item1)
+                AssetDatabase.FindAssets("t:MonoScript", new[] { "Assets", "Packages/jp.notek.atomicsoup" })
+                .Select(guid => AssetDatabase.LoadAssetAtPath<MonoScript>(AssetDatabase.GUIDToAssetPath(guid)))
+                .Where(script => script != null &&
+                    script.GetClass()?.IsSubclassOf(typeof(UdonSharpBehaviour)) == true)
+                .Where(script => script.GetClass()?.GetCustomAttributes(typeof(UdonSharpProgramAssetAttribute), true).Length > 0)
                 );
-            var deletedScripts = new HashSet<MonoScript>(managedScripts);
-            deletedScripts.ExceptWith(currentScripts);
-            var addedScripts = new HashSet<MonoScript>(currentScripts);
-            addedScripts.ExceptWith(managedScripts);
-
-            foreach (var script in addedScripts)
+            foreach (var script in currentScripts)
             {
-                string assetFullPath = GetAssetFullPath(script);
-                if (!IsUdonProgramAssetExists(assetFullPath))
+                string scriptPath = GetScriptFullPath(script);
+                if (managedAssetPathByScriptPath.ContainsKey(scriptPath))
                 {
-                    CreateUdonProgramAsset(script, assetFullPath);
+                    managedAssetPathByScriptPath[scriptPath] = GetAssetFullPath(script);
                 }
-                managedScripts.Add(script);
-                managedAssets.Add(assetFullPath, script);
+                else
+                {
+                    managedAssetPathByScriptPath.Add(scriptPath, GetAssetFullPath(script));
+                }
             }
-            foreach (var script in deletedScripts)
+
+            var deletedScriptPaths = new HashSet<string>(managedScriptPaths);
+            deletedScriptPaths.ExceptWith(currentScripts.Select(script => GetScriptFullPath(script)));
+
+            var addedScriptPaths = new HashSet<string>(currentScripts.Select(script => GetScriptFullPath(script)));
+            addedScriptPaths.ExceptWith(managedScriptPaths);
+
+            foreach (var scriptPath in addedScriptPaths)
             {
-                //TODO: スクリプトが削除された場合nullになるので、パスを保存するようにする。
-                if (script == null)
+                if (!IsUdonProgramAssetExists(managedAssetPathByScriptPath[scriptPath]))
+                {
+                    CreateUdonProgramAsset(scriptPath, managedAssetPathByScriptPath[scriptPath]);
+                }
+                managedScriptPaths.Add(scriptPath);
+            }
+            foreach (var scriptPath in deletedScriptPaths)
+            {
+                if (!managedAssetPathByScriptPath.ContainsKey(scriptPath))
                 {
                     continue;
                 }
-                string assetFullPath = GetAssetFullPath(script);
+                string assetFullPath = managedAssetPathByScriptPath[scriptPath];
                 DeleteAsset(assetFullPath);
-                managedScripts.Remove(script);
-                managedAssets.Remove(assetFullPath);
+                managedAssetPathByScriptPath.Remove(scriptPath);
+                managedScriptPaths.Remove(scriptPath);
             }
-            foreach (var asset in managedAssets)
+            foreach (var asset in managedAssetPathByScriptPath)
             {
-                ValidateAndFixUdonProgramAssets(asset.Key, asset.Value);
+                ValidateAndFixUdonProgramAssets(asset.Value, asset.Key);
             }
-            UdonSharpProgramAssetManagerSettings.instance.managedScripts = managedScripts;
-            UdonSharpProgramAssetManagerSettings.instance.managedAssets = managedAssets;
+            UdonSharpProgramAssetManagerSettings.instance.managedAssetPathByScriptPath = managedAssetPathByScriptPath;
+            UdonSharpProgramAssetManagerSettings.instance.managedScriptPaths = managedScriptPaths;
         }
 
         private static string GetAssetFullPath(MonoScript sourceScript)
@@ -76,19 +88,22 @@ namespace JP.Notek.AtomicSoup.Editor
             string assetFullPath = $"{assetPath}/{assetName}.asset";
             return assetFullPath;
         }
+        private static string GetScriptFullPath(MonoScript sourceScript)
+        {
+            return AssetDatabase.GetAssetPath(sourceScript);
+        }
 
         private static bool IsUdonProgramAssetExists(string assetFullPath)
         {
             return AssetDatabase.LoadAssetAtPath<UdonSharpProgramAsset>(assetFullPath) != null;
         }
 
-        private static void CreateUdonProgramAsset(MonoScript sourceScript, string assetFullPath)
+        private static void CreateUdonProgramAsset(string sourceScriptPath, string assetFullPath)
         {
             var programAsset = ScriptableObject.CreateInstance<UdonSharpProgramAsset>();
             AssetDatabase.CreateAsset(programAsset, assetFullPath);
 
-            programAsset.sourceCsScript = AssetDatabase.LoadAssetAtPath<MonoScript>(
-                AssetDatabase.GetAssetPath(sourceScript));
+            programAsset.sourceCsScript = AssetDatabase.LoadAssetAtPath<MonoScript>(sourceScriptPath);
 
             EditorUtility.SetDirty(programAsset);
             AssetDatabase.SaveAssets();
@@ -97,25 +112,43 @@ namespace JP.Notek.AtomicSoup.Editor
             RepaintInspector(programAsset);
         }
 
-        private static void ValidateAndFixUdonProgramAssets(string assetPath, MonoScript sourceScript)
+        private static void ValidateAndFixUdonProgramAssets(string assetPath, string sourceScriptPath)
         {
-            var programAsset = AssetDatabase.LoadAssetAtPath<UdonSharpProgramAsset>(assetPath);
-            if (programAsset == null)
+            var asset = LoadAssetAtPathOrNull<UdonSharpProgramAsset>(assetPath);
+            var script = LoadAssetAtPathOrNull<MonoScript>(sourceScriptPath);
+            if (asset != null && script != null)
             {
-                return;
+                var assetSourceScript = asset.sourceCsScript;
+                if (assetSourceScript != script)
+                {
+                    asset.sourceCsScript = script;
+                    EditorUtility.SetDirty(asset);
+                    AssetDatabase.SaveAssets();
+                }
             }
-            var assetSourceScript = programAsset.sourceCsScript;
-            if (assetSourceScript != sourceScript)
+            if (asset != null && script == null)
             {
-                programAsset.sourceCsScript = sourceScript;
-                EditorUtility.SetDirty(programAsset);
+                DeleteAsset(assetPath);
                 AssetDatabase.SaveAssets();
+            }
+        }
+
+        private static T LoadAssetAtPathOrNull<T>(string assetPath) where T : Object
+        {
+            try
+            {
+                return AssetDatabase.LoadAssetAtPath<T>(assetPath);
+            }
+            catch (FileNotFoundException)
+            {
+                Debug.LogError($"Failed to load asset at path: {assetPath}");
+                return null;
             }
         }
 
         private static void DeleteAsset(string assetPath)
         {
-            Debug.Log($"Deleting unused UdonProgramAsset: {assetPath}");
+            Debug.Log($"Deleting UdonProgramAsset: {assetPath}");
             AssetDatabase.DeleteAsset(assetPath);
         }
 
@@ -129,9 +162,9 @@ namespace JP.Notek.AtomicSoup.Editor
                 inspectorWindow.Repaint();
             }
 
-            ActiveEditorTracker.sharedTracker.ForceRebuild();
+            ActiveEditorTracker.sharedTracker?.ForceRebuild();
 
-            var editor = ActiveEditorTracker.sharedTracker.activeEditors
+            var editor = ActiveEditorTracker.sharedTracker?.activeEditors
                 .FirstOrDefault(e => e.target == target);
             if (editor != null)
             {

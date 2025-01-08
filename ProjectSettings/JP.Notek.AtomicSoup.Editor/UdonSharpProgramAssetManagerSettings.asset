@@ -13,70 +13,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _managedScriptsList:
-  - {fileID: 11500000, guid: 85705cdc88ee50240aedbc1d1ebe8111, type: 3}
-  - {fileID: 11500000, guid: 95b8f2d6134683a4d9bb6a3f73b7ffb5, type: 3}
-  - {fileID: 11500000, guid: 8c8c17f9480401241a9e1f43561bf39e, type: 3}
-  - {fileID: 11500000, guid: 116ede0683ea25649809129b36e41378, type: 3}
-  - {fileID: 11500000, guid: bef940e43da17264abaa483905dedf2a, type: 3}
-  - {fileID: 11500000, guid: 48b8897ac1d27da4594078feef059f0e, type: 3}
-  - {fileID: 11500000, guid: fd36e683fc053ed4488b5507480d69d5, type: 3}
-  - {fileID: 11500000, guid: e4823c33a18035b42adbdd6726ba5a64, type: 3}
-  - {fileID: 11500000, guid: 40d3316ac2631d5459d97395429c3ba7, type: 3}
-  - {fileID: 11500000, guid: 908eb51cfc3763546b0753d9daa16ff6, type: 3}
-  - {fileID: 11500000, guid: c0e2fcdd9842db94da9f1a83018e7f04, type: 3}
-  - {fileID: 11500000, guid: 52b06810a91d5fc46a9ca2f8b14810c8, type: 3}
-  - {fileID: 11500000, guid: aedda8b8d0a3c5649b484f38dd677d4d, type: 3}
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/ExampleObjectAdapter.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/UIAdapter.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/SyncValue1Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/SyncValue2Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/Value1Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/Value2Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/Value3Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Distributor.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/SyncAdapterGenerated.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/OwnerTimeDifferenceAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/Dictionary/Typed/VRCUrlDictionary.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/AtomHashSet.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/SubscriberHashSet.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/AtomGraphManager.cs
   _managedAssetsKeys:
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value3CalclatedAtom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Adapter/UIAdapter.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Adapter/ExampleObjectAdapter.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel/Distributor.asset
-  - Packages\jp.notek.udux\UdonProgramSources\VRCCollection\HashSet\Typed/SubscriberHashSet.asset
-  - Packages\jp.notek.udux\UdonProgramSources\VRCCollection\Dictionary\Typed/SubscribersByAtomsDictionary.asset
-  - Packages\jp.notek.udux\UdonProgramSources\VRCCollection\HashSet\Typed/AtomHashSet.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncRequestIdAtom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/OwnerTimeDifferenceAtom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncValue2Atom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncValue1Atom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value3Atom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value2Atom.asset
-  - Packages\jp.notek.udux\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value1Atom.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Adapter/UIAdapter.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Adapter/ExampleObjectAdapter.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel/Distributor.asset
-  - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\HashSet\Typed/SubscriberHashSet.asset
-  - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\Dictionary\Typed/SubscribersByAtomsDictionary.asset
-  - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\HashSet\Typed/AtomHashSet.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/OwnerTimeDifferenceAtom.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncValue2Atom.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncValue1Atom.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value3Atom.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value2Atom.asset
-  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value1Atom.asset
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/ExampleObjectAdapter.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/UIAdapter.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/SyncValue1Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/SyncValue2Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/Value1Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/Value2Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Atoms/Value3Atom.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/Distributor.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Model/ExampleModel/SyncAdapterGenerated.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/OwnerTimeDifferenceAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/Dictionary/Typed/VRCUrlDictionary.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/AtomHashSet.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/SubscriberHashSet.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/AtomGraphManager.cs
   _managedAssetsValues:
-  - {fileID: 11500000, guid: c0e2fcdd9842db94da9f1a83018e7f04, type: 3}
-  - {fileID: 11500000, guid: 95b8f2d6134683a4d9bb6a3f73b7ffb5, type: 3}
-  - {fileID: 11500000, guid: 8c8c17f9480401241a9e1f43561bf39e, type: 3}
-  - {fileID: 11500000, guid: 116ede0683ea25649809129b36e41378, type: 3}
-  - {fileID: 11500000, guid: bef940e43da17264abaa483905dedf2a, type: 3}
-  - {fileID: 11500000, guid: 48b8897ac1d27da4594078feef059f0e, type: 3}
-  - {fileID: 11500000, guid: fd36e683fc053ed4488b5507480d69d5, type: 3}
-  - {fileID: 11500000, guid: 85705cdc88ee50240aedbc1d1ebe8111, type: 3}
-  - {fileID: 11500000, guid: e4823c33a18035b42adbdd6726ba5a64, type: 3}
-  - {fileID: 11500000, guid: 40d3316ac2631d5459d97395429c3ba7, type: 3}
-  - {fileID: 11500000, guid: 908eb51cfc3763546b0753d9daa16ff6, type: 3}
-  - {fileID: 11500000, guid: c0e2fcdd9842db94da9f1a83018e7f04, type: 3}
-  - {fileID: 11500000, guid: 52b06810a91d5fc46a9ca2f8b14810c8, type: 3}
-  - {fileID: 11500000, guid: aedda8b8d0a3c5649b484f38dd677d4d, type: 3}
-  - {fileID: 11500000, guid: 95b8f2d6134683a4d9bb6a3f73b7ffb5, type: 3}
-  - {fileID: 11500000, guid: 8c8c17f9480401241a9e1f43561bf39e, type: 3}
-  - {fileID: 11500000, guid: 116ede0683ea25649809129b36e41378, type: 3}
-  - {fileID: 11500000, guid: bef940e43da17264abaa483905dedf2a, type: 3}
-  - {fileID: 11500000, guid: 48b8897ac1d27da4594078feef059f0e, type: 3}
-  - {fileID: 11500000, guid: fd36e683fc053ed4488b5507480d69d5, type: 3}
-  - {fileID: 11500000, guid: e4823c33a18035b42adbdd6726ba5a64, type: 3}
-  - {fileID: 11500000, guid: 40d3316ac2631d5459d97395429c3ba7, type: 3}
-  - {fileID: 11500000, guid: 908eb51cfc3763546b0753d9daa16ff6, type: 3}
-  - {fileID: 11500000, guid: c0e2fcdd9842db94da9f1a83018e7f04, type: 3}
-  - {fileID: 11500000, guid: 52b06810a91d5fc46a9ca2f8b14810c8, type: 3}
-  - {fileID: 11500000, guid: aedda8b8d0a3c5649b484f38dd677d4d, type: 3}
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Adapter/ExampleObjectAdapter.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Adapter/UIAdapter.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncValue1Atom.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/SyncValue2Atom.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value1Atom.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value2Atom.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel\Atoms/Value3Atom.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel/Distributor.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Model\ExampleModel/SyncAdapterGenerated.asset
+  - Packages\jp.notek.atomicsoup\UdonProgramSources\Atom/OwnerTimeDifferenceAtom.asset
+  - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\Dictionary\Typed/VRCUrlDictionary.asset
+  - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\HashSet\Typed/AtomHashSet.asset
+  - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\HashSet\Typed/SubscriberHashSet.asset
+  - Packages\jp.notek.atomicsoup\UdonProgramSources\Atom/AtomGraphManager.asset

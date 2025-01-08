@@ -151,6 +151,29 @@ MonoBehaviour:
   - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/DataListAtom.cs
   - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/WritableDataListAtom.cs
   - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/CalculatedDataListAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableByteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableSbyteAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableDoubleAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableFloatAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableIntAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableUintAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableLongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableUlongAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableShortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableUshortAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableColorAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableColor32Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableQuaternionAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableVector2Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableVector3Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableVector4Atom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableStringAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableCharAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableVRCUrlAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableBoolAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableDataTokenAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableDataDictionaryAtom.cs
+  - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/Typed/Generated/SyncableDataListAtom.cs
   _sourceByFileNameValues:
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.Udux.Editor.AtomSourceGenerator.\r\n*/\r\nusing UdonSharp;\r\nusing
@@ -842,18 +865,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected byte _NextValue;\r\n       
     public byte NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(byte
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableByteAtom : ByteAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(byte value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(byte value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -871,18 +896,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected sbyte
     _NextValue;\r\n        public sbyte NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(sbyte
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableSbyteAtom : SbyteAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(sbyte value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(sbyte value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -900,18 +927,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected double
     _NextValue;\r\n        public double NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(double
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableDoubleAtom : DoubleAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(double value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(double value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -929,18 +958,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected float
     _NextValue;\r\n        public float NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(float
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableFloatAtom : FloatAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(float value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(float value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -958,18 +989,19 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected int _NextValue;\r\n       
     public int NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(int
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableIntAtom : IntAtom\r\n    {\r\n        public override
-    void OnChange() { }\r\n\r\n        public void Set(int value)\r\n        {\r\n           
-    SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    bool IsInputNode { get { return true; } }\r\n        public override void OnChange()
+    { }\r\n\r\n        public void Set(int value)\r\n        {\r\n            SetNextValue(value);\r\n           
+    _Distributor.OnInputNodeChanged(this);\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -987,18 +1019,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected uint _NextValue;\r\n       
     public uint NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(uint
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableUintAtom : UintAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(uint value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(uint value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1016,18 +1050,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected long _NextValue;\r\n       
     public long NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(long
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableLongAtom : LongAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(long value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(long value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1045,18 +1081,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected ulong
     _NextValue;\r\n        public ulong NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(ulong
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableUlongAtom : UlongAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(ulong value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(ulong value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1074,18 +1112,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected short
     _NextValue;\r\n        public short NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(short
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableShortAtom : ShortAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(short value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(short value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1103,18 +1143,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected ushort
     _NextValue;\r\n        public ushort NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(ushort
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableUshortAtom : UshortAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(ushort value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(ushort value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1132,18 +1174,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected Color
     _NextValue;\r\n        public Color NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Color
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableColorAtom : ColorAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(Color value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Color value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1161,18 +1205,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected Color32
     _NextValue;\r\n        public Color32 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Color32
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue.Equals(value))\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableColor32Atom : Color32Atom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(Color32 value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Color32 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1192,18 +1238,20 @@ MonoBehaviour:
     } }\r\n        \r\n        protected Quaternion _NextValue;\r\n        public
     Quaternion NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Quaternion
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableQuaternionAtom : QuaternionAtom\r\n    {\r\n       
-    public override void OnChange() { }\r\n\r\n        public void Set(Quaternion
-    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    public override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Quaternion value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1222,18 +1270,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector2
     _NextValue;\r\n        public Vector2 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector2
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableVector2Atom : Vector2Atom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(Vector2 value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Vector2 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1252,18 +1302,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector3
     _NextValue;\r\n        public Vector3 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector3
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableVector3Atom : Vector3Atom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(Vector3 value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Vector3 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1282,18 +1334,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected Vector4
     _NextValue;\r\n        public Vector4 NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(Vector4
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableVector4Atom : Vector4Atom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(Vector4 value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Vector4 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1312,18 +1366,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected string
     _NextValue;\r\n        public string NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(string
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableStringAtom : StringAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(string value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(string value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1341,18 +1397,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected char _NextValue;\r\n       
     public char NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(char
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableCharAtom : CharAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(char value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(char value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1370,18 +1428,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected VRCUrl
     _NextValue;\r\n        public VRCUrl NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(VRCUrl
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableVRCUrlAtom : VRCUrlAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(VRCUrl value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(VRCUrl value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1399,18 +1459,20 @@ MonoBehaviour:
     return _PreviousValue;\r\n        } }\r\n        \r\n        protected bool _NextValue;\r\n       
     public bool NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(bool
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableBoolAtom : BoolAtom\r\n    {\r\n        public
-    override void OnChange() { }\r\n\r\n        public void Set(bool value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(bool value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1429,18 +1491,20 @@ MonoBehaviour:
     } }\r\n        \r\n        protected DataToken _NextValue;\r\n        public
     DataToken NextValue { get {\r\n            PublishIfUnchanged();\r\n           
     return _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(DataToken
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableDataTokenAtom : DataTokenAtom\r\n    {\r\n       
-    public override void OnChange() { }\r\n\r\n        public void Set(DataToken
-    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    public override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(DataToken value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1461,17 +1525,20 @@ MonoBehaviour:
     _NextValue;\r\n        public DataDictionary NextValue { get {\r\n           
     PublishIfUnchanged();\r\n            return _NextValue;\r\n        } }\r\n\r\n       
     protected void SetNextValue(DataDictionary value)\r\n        {\r\n           
-    _NextValue = value;\r\n            IsDirty = true;\r\n            _Distributor.OnAtomChanged(this);\r\n       
-    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
-    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
-    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishAtomValuesToContext();\r\n        }\r\n    }\r\n}\r\n"
+    if (_NextValue == value)\r\n                return;\r\n            _NextValue
+    = value;\r\n            IsDirty = true;\r\n        }\r\n\r\n        public override
+    void ReflectNextValue()\r\n        {\r\n            _PreviousValue = _Value;\r\n           
+    _Value = _NextValue;\r\n            IsDirty = false;\r\n        }\r\n\r\n       
+    void PublishIfUnchanged()\r\n        {\r\n            _Distributor.DistributeIntermidiate();\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableDataDictionaryAtom : DataDictionaryAtom\r\n   
-    {\r\n        public override void OnChange() { }\r\n\r\n        public void Set(DataDictionary
-    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    {\r\n        public override bool IsInputNode { get { return true; } }\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataDictionary
+    value)\r\n        {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1491,18 +1558,20 @@ MonoBehaviour:
     } }\r\n        \r\n        protected DataList _NextValue;\r\n        public DataList
     NextValue { get {\r\n            PublishIfUnchanged();\r\n            return
     _NextValue;\r\n        } }\r\n\r\n        protected void SetNextValue(DataList
-    value)\r\n        {\r\n            _NextValue = value;\r\n            IsDirty
-    = true;\r\n            _Distributor.OnAtomChanged(this);\r\n        }\r\n\r\n       
-    public override void ReflectNextValue()\r\n        {\r\n            _PreviousValue
-    = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty = false;\r\n       
-    }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishAtomValuesToContext();\r\n       
-    }\r\n    }\r\n}\r\n"
+    value)\r\n        {\r\n            if (_NextValue == value)\r\n               
+    return;\r\n            _NextValue = value;\r\n            IsDirty = true;\r\n       
+    }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
+    _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
+    = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
     public abstract class WritableDataListAtom : DataListAtom\r\n    {\r\n       
-    public override void OnChange() { }\r\n\r\n        public void Set(DataList value)\r\n       
-    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+    public override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(DataList value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1510,3 +1579,180 @@ MonoBehaviour:
     public abstract DataList Factory();\r\n        \r\n        public override void
     OnChange()\r\n        {\r\n            SetNextValue(Factory());\r\n        }\r\n   
     }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableByteAtom : ByteAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(byte value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableSbyteAtom : SbyteAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(sbyte value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableDoubleAtom : DoubleAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(double value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableFloatAtom : FloatAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(float value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableIntAtom : IntAtom\r\n    {\r\n        public override
+    bool IsInputNode { get { return true; } }\r\n        public override void OnChange()
+    { }\r\n\r\n        public void Set(int value)\r\n        {\r\n            SetNextValue(value);\r\n           
+    _Distributor.OnInputNodeChanged(this);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableUintAtom : UintAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(uint value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableLongAtom : LongAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(long value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableUlongAtom : UlongAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(ulong value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableShortAtom : ShortAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(short value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableUshortAtom : UshortAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(ushort value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableColorAtom : ColorAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Color value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableColor32Atom : Color32Atom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Color32 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableQuaternionAtom : QuaternionAtom\r\n    {\r\n       
+    public override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Quaternion value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableVector2Atom : Vector2Atom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Vector2 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableVector3Atom : Vector3Atom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Vector3 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableVector4Atom : Vector4Atom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(Vector4 value)\r\n       
+    {\r\n            SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableStringAtom : StringAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(string value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableCharAtom : CharAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(char value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableVRCUrlAtom : VRCUrlAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(VRCUrl value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableBoolAtom : BoolAtom\r\n    {\r\n        public
+    override bool IsInputNode { get { return true; } }\r\n        public override
+    void OnChange() { }\r\n\r\n        public void Set(bool value)\r\n        {\r\n           
+    SetNextValue(value);\r\n            _Distributor.OnInputNodeChanged(this);\r\n       
+    }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableDataTokenAtom : DataTokenAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataToken
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableDataDictionaryAtom : DataDictionaryAtom\r\n   
+    {\r\n        public override void OnChange() { }\r\n\r\n        public void Set(DataDictionary
+    value)\r\n        {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"
+  - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
+    BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
+    VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
+    public abstract class SyncableDataListAtom : DataListAtom\r\n    {\r\n       
+    public override void OnChange() { }\r\n\r\n        public void Set(DataList value)\r\n       
+    {\r\n            SetNextValue(value);\r\n        }\r\n    }\r\n}\r\n"

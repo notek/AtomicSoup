@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: AtomHashSet
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 6a1542895aba397419df25134358813c,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: b061e3e5e922ab546a9b1abe1dad822d,
     type: 2}
   udonAssembly: 
   assemblyError: 
@@ -116,7 +116,7 @@ MonoBehaviour:
       Data: 6|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: JP.Notek.AtomicSoup.Atom[], JP.Notek.AtomicSoup
+      Data: JP.Notek.AtomicSoup.AtomSubscriber[], JP.Notek.AtomicSoup
     - Name: 
       Entry: 8
       Data: 

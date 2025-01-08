@@ -34,9 +34,10 @@ namespace JP.Notek.AtomicSoup
 
         protected void SetNextValue(VRCUrl value)
         {
+            if (_NextValue == value)
+                return;
             _NextValue = value;
             IsDirty = true;
-            _Distributor.OnAtomChanged(this);
         }
 
         public override void ReflectNextValue()
@@ -48,7 +49,7 @@ namespace JP.Notek.AtomicSoup
 
         void PublishIfUnchanged()
         {
-            _Distributor.PublishAtomValuesToContext();
+            _Distributor.DistributeIntermidiate();
         }
     }
 }

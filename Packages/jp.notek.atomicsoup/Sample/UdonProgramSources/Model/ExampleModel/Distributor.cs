@@ -13,7 +13,6 @@ namespace AtomicSoupSample.ExampleModel
     [DIProvide(typeof(Value3Atom))]
     [DIProvide(typeof(SyncValue1Atom))]
     [DIProvide(typeof(SyncValue2Atom))]
-    [DIProvide(typeof(OwnerTimeDifferenceAtom))]
     public class Distributor : AtomDistributor
     {
         [DIInject] public Value1Atom Value1;
@@ -21,7 +20,6 @@ namespace AtomicSoupSample.ExampleModel
         [DIInject] public Value3Atom Value3;
         [DIInject] public SyncValue1Atom SyncValue1;
         [DIInject] public SyncValue2Atom SyncValue2;
-        [DIInject] public OwnerTimeDifferenceAtom OwnerTimeDifference;
         protected override DistributorConsistency Consistency => DistributorConsistency.Strong;
     }
 }

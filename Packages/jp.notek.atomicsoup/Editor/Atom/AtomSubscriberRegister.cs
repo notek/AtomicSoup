@@ -19,7 +19,7 @@ namespace JP.Notek.AtomicSoup.Editor
         static AtomSubscriberRegister()
         {
             EditorApplication.hierarchyChanged += Register;
-            CompilationPipeline.compilationFinished += (object sender) => Register();
+            Register();
         }
 
         public static void Register()
@@ -29,7 +29,7 @@ namespace JP.Notek.AtomicSoup.Editor
             var distributors = Object.FindObjectsOfType<AtomDistributor>();
             var subscribersForView = Object.FindObjectsOfType<AtomSubscriberForView>();
             var subscribersForAtom = Object.FindObjectsOfType<AtomSubscriberForAtom>();
-
+            var subscribersForSync = Object.FindObjectsOfType<AtomSubscriberForSync>();
             foreach (var distributor in distributors)
             {
                 distributor.ClearSubscribers();
@@ -38,7 +38,7 @@ namespace JP.Notek.AtomicSoup.Editor
             {
                 var subscribeAtoms = subscriberForView.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                     .Where(field => field.GetCustomAttributes(typeof(SubscribeAtomAttribute), true).Length > 0)
-                    .Select(field => field.GetValue(subscriberForView) as Atom)
+                    .Select(field => field.GetValue(subscriberForView) as AtomSubscriber)
                     .Where(atom => atom != null)
                     .ToArray();
                 if (subscribeAtoms.Length > 0)
@@ -52,7 +52,7 @@ namespace JP.Notek.AtomicSoup.Editor
             {
                 var subscribeAtoms = subscriberForAtom.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                     .Where(field => field.GetCustomAttributes(typeof(SubscribeAtomAttribute), true).Length > 0)
-                    .Select(field => field.GetValue(subscriberForAtom) as Atom)
+                    .Select(field => field.GetValue(subscriberForAtom) as AtomSubscriber)
                     .Where(atom => atom != null)
                     .ToArray();
                 if (subscribeAtoms.Length > 0)
@@ -61,6 +61,25 @@ namespace JP.Notek.AtomicSoup.Editor
                         distributor.SubscribeOnChangeForContext(subscriberForAtom, subscribeAtoms);
                         UdonSharpEditorUtility.CopyProxyToUdon(distributor);
                     }
+            }
+            foreach (var subscriberForSync in subscribersForSync)
+            {
+                var subscribeAtoms = subscriberForSync.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+                    .Where(field => field.GetCustomAttributes(typeof(SubscribeAtomAttribute), true).Length > 0)
+                    .Select(field => field.GetValue(subscriberForSync) as AtomSubscriber)
+                    .Where(atom => atom != null)
+                    .ToArray();
+                if (subscribeAtoms.Length > 0)
+                    foreach (var distributor in distributors)
+                    {
+                        distributor.SubscribeOnChangeForSync(subscriberForSync, subscribeAtoms);
+                        UdonSharpEditorUtility.CopyProxyToUdon(distributor);
+                    }
+            }
+
+            foreach (var distributor in distributors)
+            {
+                distributor.FinalizePreprocess();
             }
         }
     }

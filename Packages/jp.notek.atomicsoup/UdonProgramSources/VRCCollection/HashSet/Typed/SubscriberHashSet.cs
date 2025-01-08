@@ -19,7 +19,7 @@ namespace JP.Notek.AtomicSoup.VRCCollection
             else
             {
                 _SetDictionary.Add(key, _Values.Length);
-                _Values = _Values.Add(key);
+                _Values = _Values.Concat(key);
             }
         }
         public void Remove(AtomSubscriber key)
