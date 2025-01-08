@@ -49,7 +49,7 @@ namespace JP.Notek.AtomicSoup
 
         void PublishIfUnchanged()
         {
-            _Distributor.PublishPrimary();
+            _Distributor.DistributeIntermidiate();
         }
     }
 }

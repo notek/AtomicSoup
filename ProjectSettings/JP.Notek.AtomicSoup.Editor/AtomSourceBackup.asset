@@ -870,7 +870,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -901,7 +901,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -932,7 +932,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -963,7 +963,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -994,7 +994,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1086,7 +1086,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1117,7 +1117,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1148,7 +1148,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1179,7 +1179,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1210,7 +1210,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1243,7 +1243,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1275,7 +1275,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1307,7 +1307,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1339,7 +1339,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1371,7 +1371,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1402,7 +1402,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1433,7 +1433,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1464,7 +1464,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1496,7 +1496,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   
@@ -1529,7 +1529,7 @@ MonoBehaviour:
     = value;\r\n            IsDirty = true;\r\n        }\r\n\r\n        public override
     void ReflectNextValue()\r\n        {\r\n            _PreviousValue = _Value;\r\n           
     _Value = _NextValue;\r\n            IsDirty = false;\r\n        }\r\n\r\n       
-    void PublishIfUnchanged()\r\n        {\r\n            _Distributor.PublishPrimary();\r\n       
+    void PublishIfUnchanged()\r\n        {\r\n            _Distributor.DistributeIntermidiate();\r\n       
     }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
@@ -1563,7 +1563,7 @@ MonoBehaviour:
     }\r\n\r\n        public override void ReflectNextValue()\r\n        {\r\n           
     _PreviousValue = _Value;\r\n            _Value = _NextValue;\r\n            IsDirty
     = false;\r\n        }\r\n\r\n        void PublishIfUnchanged()\r\n        {\r\n           
-    _Distributor.PublishPrimary();\r\n        }\r\n    }\r\n}\r\n"
+    _Distributor.DistributeIntermidiate();\r\n        }\r\n    }\r\n}\r\n"
   - "\r\n/*\r\n\r\n    DO NOT MODIFY THIS FILE!\r\n\r\n    THIS FILE IS GENERATED
     BY JP.Notek.AtomicSoup.Editor.AtomSourceGenerator.\r\n*/\r\nusing UnityEngine;\r\nusing
     VRC.SDKBase;\r\nusing VRC.SDK3.Data;\r\n\r\nnamespace JP.Notek.AtomicSoup\r\n{\r\n   

@@ -21,10 +21,12 @@ namespace JP.Notek.AtomicSoup
         [SerializeField, DIInject("AtomsChanged")] protected AtomHashSet _AtomsChanged;
         [DIInject] public OwnerTimeDifferenceAtom OwnerTimeDifference;
 
+        AtomSubscriber[] _PrimaryQueue = new AtomSubscriber[0];
         AtomSubscriber[] _SecondaryQueue = new AtomSubscriber[0];
 
         protected abstract DistributorConsistency Consistency { get; }
         bool _Lock = false;
+        int _PublishI = 0;
 
 #if !COMPILER_UDONSHARP && UNITY_EDITOR
         public void ClearSubscribers()
@@ -59,8 +61,14 @@ namespace JP.Notek.AtomicSoup
 
         void Update()
         {
-            PublishPrimary();
-            PublishSecondary();
+            if (_Lock)
+                return;
+            _Lock = true;
+            if (Consistency == DistributorConsistency.Strong)
+                DistributeStrong();
+            else
+                DistributeEventual();
+            _Lock = false;
         }
 
         public void OnInputNodeChanged(AtomSubscriber atom)
@@ -72,49 +80,67 @@ namespace JP.Notek.AtomicSoup
             _AtomsChanged.Add(atom);
         }
 
-        public void PublishPrimary()
+        public void DistributeStrong()
         {
-            if(_AtomsChanged.Count() == 0)
+            if (_SecondaryQueue.Length > 0)
+                DistributeOutputNode();
+            else
+                DistributeIntermidiate();
+        }
+
+        public void DistributeEventual()
+        {
+            if (_PrimaryQueue.Length > 0)
+            {
+                _PrimaryQueue[_PublishI].OnChange();
+                _PrimaryQueue[_PublishI++].ReflectNextValue();
+                if (_PublishI >= _PrimaryQueue.Length)
+                {
+                    _PrimaryQueue = new AtomSubscriber[0];
+                    _PublishI = 0;
+                }
+            }
+            else
+            {
+                if (_AtomsChanged.Count() == 0)
+                    return;
+                _PrimaryQueue = _GraphManager.GetPrimaryQueue(_AtomsChanged);
+                _AtomsChanged.Clear();
+            }
+        }
+
+        public void DistributeIntermidiate()
+        {
+            if (_AtomsChanged.Count() == 0)
                 return;
-            if(_SecondaryQueue.Length > 0)
+            if (_SecondaryQueue.Length > 0)
             {
                 return;
             }
-            if (_Lock)
-                return;
-            _Lock = true;
-            var primaryQueue = _GraphManager.GetPrimaryQueue(_AtomsChanged);
-            var secondaryQueue = _GraphManager.GetSecondaryQueue(_AtomsChanged);
-            var atomsChanged =_AtomsChanged.ToArray();
-            foreach (var atom in atomsChanged)
+            _PrimaryQueue = _GraphManager.GetPrimaryQueue(_AtomsChanged);
+            _SecondaryQueue = _GraphManager.GetSecondaryQueue(_AtomsChanged);
+            var atomsChangedTaken = _AtomsChanged.ToArray();
+            _AtomsChanged.Clear();
+            foreach (var atom in atomsChangedTaken)
             {
                 atom.ReflectNextValue();
             }
-            _AtomsChanged.Clear();
-            foreach (var atom in primaryQueue)
+            foreach (var atom in _PrimaryQueue)
             {
                 atom.OnChange();
                 atom.ReflectNextValue();
             }
-
-            _SecondaryQueue = secondaryQueue;
-            _Lock = false;
         }
-        void PublishSecondary()
+        void DistributeOutputNode()
         {
             if (_SecondaryQueue.Length == 0)
                 return;
-            if (_Lock)
-                return;
-            _Lock = true;
-            //TODO: 非同期Atomは更新完了後にDirtyフラグを戻す
-
-            foreach (var atom in _SecondaryQueue)
+            _SecondaryQueue[_PublishI++].OnChange();
+            if (_PublishI >= _SecondaryQueue.Length)
             {
-                atom.OnChange();
+                _SecondaryQueue = new AtomSubscriber[0];
+                _PublishI = 0;
             }
-            _SecondaryQueue = new AtomSubscriber[0];
-            _Lock = false;
         }
     }
 }
