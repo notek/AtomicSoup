@@ -9,6 +9,10 @@ namespace JP.Notek.AtomicSoup.Editor
     [FilePath("ProjectSettings/JP.Notek.AtomicSoup.Editor/UdonSharpProgramAssetManagerSettings.asset", FilePathAttribute.Location.ProjectFolder)]
     public class UdonSharpProgramAssetManagerSettings : ScriptableSingleton<UdonSharpProgramAssetManagerSettings>
     {
+
+        [SerializeField]
+        private List<string> _allowPackageNames = new List<string>();
+
         [SerializeField]
         private List<string> _managedScriptsList = new List<string>();
 
@@ -17,6 +21,16 @@ namespace JP.Notek.AtomicSoup.Editor
 
         [SerializeField]
         private List<string> _managedAssetsValues = new List<string>();
+
+        public HashSet<string> allowPackageNames
+        {
+            get => new HashSet<string>(_allowPackageNames);
+            set
+            {
+                _allowPackageNames = new List<string>(value);
+                Save();
+            }
+        }
 
         public HashSet<string> managedScriptPaths
         {

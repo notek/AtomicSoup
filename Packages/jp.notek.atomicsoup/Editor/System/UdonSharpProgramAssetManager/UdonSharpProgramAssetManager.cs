@@ -26,9 +26,10 @@ namespace JP.Notek.AtomicSoup.Editor
                 return;
             var managedScriptPaths = UdonSharpProgramAssetManagerSettings.instance.managedScriptPaths;
             var managedAssetPathByScriptPath = UdonSharpProgramAssetManagerSettings.instance.managedAssetPathByScriptPath;
+            var allowPackageNames = UdonSharpProgramAssetManagerSettings.instance.allowPackageNames;
 
             var currentScripts = new HashSet<MonoScript>(
-                AssetDatabase.FindAssets("t:MonoScript", new[] { "Assets", "Packages/jp.notek.atomicsoup" })
+                AssetDatabase.FindAssets("t:MonoScript", new[] { "Assets", "Packages/jp.notek.atomicsoup" }.Concat(allowPackageNames.Select(name => $"Packages/{name}")).ToArray())
                 .Select(guid => AssetDatabase.LoadAssetAtPath<MonoScript>(AssetDatabase.GUIDToAssetPath(guid)))
                 .Where(script => script != null &&
                     script.GetClass()?.IsSubclassOf(typeof(UdonSharpBehaviour)) == true)

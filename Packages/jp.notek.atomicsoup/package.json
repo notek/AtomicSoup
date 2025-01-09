@@ -1,7 +1,7 @@
 {
   "name": "jp.notek.atomicsoup",
   "displayName": "AtomicSoup",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "unity": "2022.3",
   "description": "AtomicSoup is an atom framework for Udon.",
   "author": {
@@ -10,6 +10,6 @@
     "url": "https://notoitoh.notek.jp"
   },
   "vpmDependencies": {
-    "com.vrchat.worlds": "^3.5.0"
+    "com.vrchat.worlds": "^3.7.5"
   }
 }
