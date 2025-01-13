@@ -20,6 +20,20 @@ namespace JP.Notek.AtomicSoup.Editor
             ConsistantUdonSharpProgramAssets();
         }
 
+        [MenuItem("AtomicSoup/Reset UdonSharpProgramAssets")]
+        public static void ResetUdonSharpProgramAssets()
+        {
+            UdonSharpProgramAssetManagerSettings.instance.managedAssetPathByScriptPath = new Dictionary<string, string>();
+            UdonSharpProgramAssetManagerSettings.instance.managedScriptPaths = new HashSet<string>();
+            var allowPackageNames = UdonSharpProgramAssetManagerSettings.instance.allowPackageNames;
+            var assetGuids = AssetDatabase.FindAssets("t:UdonSharpProgramAsset", new[] { "Assets", "Packages/jp.notek.atomicsoup" }.Concat(allowPackageNames.Select(name => $"Packages/{name}")).ToArray());
+            foreach (var assetGuid in assetGuids)
+            {
+                DeleteAsset(AssetDatabase.GUIDToAssetPath(assetGuid));
+            }
+            ConsistantUdonSharpProgramAssets();
+        }
+
         public static void ConsistantUdonSharpProgramAssets()
         {
             if (EditorApplication.isPlaying)

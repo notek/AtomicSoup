@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15a81932cc8aaf408a1cb80f732bf62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _allowPackageNames: []
   _managedScriptsList:
   - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/ExampleObjectAdapter.cs
   - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/UIAdapter.cs
