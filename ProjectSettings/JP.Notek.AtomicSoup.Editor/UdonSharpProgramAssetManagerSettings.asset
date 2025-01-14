@@ -28,6 +28,8 @@ MonoBehaviour:
   - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/AtomHashSet.cs
   - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/SubscriberHashSet.cs
   - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/AtomGraphManager.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Pipe/PipeWorker.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Pipe/RequestStringFromAPI.cs
   _managedAssetsKeys:
   - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/ExampleObjectAdapter.cs
   - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Adapter/UIAdapter.cs
@@ -43,6 +45,8 @@ MonoBehaviour:
   - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/AtomHashSet.cs
   - Packages/jp.notek.atomicsoup/UdonProgramSources/VRCCollection/HashSet/Typed/SubscriberHashSet.cs
   - Packages/jp.notek.atomicsoup/UdonProgramSources/Atom/AtomGraphManager.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Pipe/PipeWorker.cs
+  - Packages/jp.notek.atomicsoup/Sample/UdonProgramSources/Pipe/RequestStringFromAPI.cs
   _managedAssetsValues:
   - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Adapter/ExampleObjectAdapter.asset
   - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Adapter/UIAdapter.asset
@@ -58,3 +62,5 @@ MonoBehaviour:
   - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\HashSet\Typed/AtomHashSet.asset
   - Packages\jp.notek.atomicsoup\UdonProgramSources\VRCCollection\HashSet\Typed/SubscriberHashSet.asset
   - Packages\jp.notek.atomicsoup\UdonProgramSources\Atom/AtomGraphManager.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Pipe/PipeWorker.asset
+  - Packages\jp.notek.atomicsoup\Sample\UdonProgramSources\Pipe/RequestStringFromAPI.asset
