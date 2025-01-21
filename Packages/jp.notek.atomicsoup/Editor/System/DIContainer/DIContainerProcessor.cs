@@ -101,7 +101,7 @@ namespace JP.Notek.AtomicSoup.Editor
 
         private static void ProcessInject(UdonSharpBehaviour behaviour, FieldInfo field, DIInjectAttribute attribute)
         {
-            var componentType = field.FieldType;
+            var componentType = attribute.Type ?? field.FieldType;
             DIContainerSettings.instance.managedComponentInstanceIds.TryGetValue(GetManagedComponentInstanceIdsKey(componentType, attribute.Id), out var instanceId);
             var component = FindComponentInHierarchy(behaviour.gameObject, componentType, attribute.Id != null ? instanceId : null);
 
